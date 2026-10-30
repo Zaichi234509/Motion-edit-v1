@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.analysis/
+google_drive/
+*.mp4
+.DS_Store
