@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Player } from './scene-player'
 import { Stage } from './stage'
 import { SCENES, type Scene } from './scenes'
+import { KatanaSection } from './higgsfield/KatanaSection'
 
 /* ================================================================
    Small presentational helpers
@@ -634,6 +635,7 @@ export default function App() {
             <a href="#breakdown">Breakdown</a>
             <a href="#effects">Effects</a>
             <a href="#builder">Playground</a>
+            <a href="#katana">Katana</a>
             <a href="#recipe">Stack</a>
           </nav>
           <span className="pill">9:16 · CSS only</span>
@@ -770,6 +772,24 @@ export default function App() {
             lede="This is the part that makes it a website and not a video: the copy is data. Edit the fields on the left and the same scene engine re-renders on the right — no re-render pass, no After Effects."
           />
           <Builder />
+        </section>
+
+        <div className="shell">
+          <div className="divider" />
+        </div>
+
+        {/* ---------------- KATANA / HIGGSFIELD ---------------- */}
+        <section className="shell sec" id="katana">
+          <SectionHead
+            kicker="installed · mcp + api"
+            title={
+              <>
+                Katana presets, <em>wired in</em>
+              </>
+            }
+            lede="The reel's Katana catalog is a set of named camera recipes you pick instead of prompting. Here it is as real infrastructure: a local MCP server (katana-mcp) exposes the presets and scene builder as agent tools, and /api/hf/* proxies Higgsfield server-side so no key ever reaches the browser. Pick a preset and the stage re-renders with its camera move."
+          />
+          <KatanaSection />
         </section>
 
         <div className="shell">

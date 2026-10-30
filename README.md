@@ -8,6 +8,21 @@ Teardown + working rebuild of a 95-second vertical "code-based motion graphics" 
 - **`site/`** — a live website that rebuilds the look in DOM + CSS + SVG, with an editable
   scene engine so your own copy renders in the same style.
 
+## Installed integrations
+
+- **[docs/HIGGSFIELD-MCP.md](docs/HIGGSFIELD-MCP.md)** — the Higgsfield + Katana stack:
+  hosted MCP connector, developer API proxy, the local `katana-mcp` server, and the
+  credit guards.
+- `.mcp.json` — wires `higgsfield` (hosted, OAuth) and `katana` (local stdio) MCP servers.
+- `.claude/skills/higgsfield-katana/SKILL.md` — the skill that drives the workflow.
+
+```bash
+cd site
+npm run dev            # site + /api/hf/* proxy
+npm run mcp            # local katana-mcp server
+npm run sync:presets   # regenerate server/katana-presets.mjs from presets.ts
+```
+
 ## Run it
 
 ```bash
@@ -23,6 +38,7 @@ npm run dev      # http://localhost:5173
 2. **Breakdown** — the shot-by-shot beat map of the reference video.
 3. **Effects** — nine live primitives with copy-paste CSS.
 4. **Playground** — type your own hook / headline / subline, toggle layers, copy the scene JSON.
-5. **Stack** — the build order, palette and record-to-MP4 recipe.
+5. **Katana** — the installed preset catalog, live status badge, and brief → preset matching.
+6. **Stack** — the build order, palette and record-to-MP4 recipe.
 
 Content lives in `site/src/scenes.ts`. Everything else is renderer.
