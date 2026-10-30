@@ -80,6 +80,7 @@ export default defineConfig(({ mode }) => {
     rollupOptions: {
       input: {
         main: 'index.html',
+        system: 'system.html',
         lore: 'lore.html',
       },
     },

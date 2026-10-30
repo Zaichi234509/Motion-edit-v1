@@ -638,6 +638,9 @@ export default function App() {
             <a href="#katana">Katana</a>
             <a href="#recipe">Stack</a>
           </nav>
+          <a className="pill" href="./" style={{ textDecoration: 'none' }}>
+            ← Scroll site
+          </a>
           <a className="pill" href="./lore.html" style={{ textDecoration: 'none' }}>
             Lore sample ↗
           </a>

@@ -129,6 +129,7 @@ export default function LoreApp() {
             <a href="#chapters">Chapters</a>
             <a href="#ladder">Cosmology</a>
             <a href="#glossary">Glossary</a>
+            <a href="./system.html">System ↗</a>
           </nav>
           <span className="pill">9:16 · lore sample</span>
         </div>
@@ -153,7 +154,7 @@ export default function LoreApp() {
                 Pick a chapter →
               </a>
               <a className="btn btn-ghost" href="./">
-                Back to the system
+                Back to Glowkit
               </a>
             </div>
             <div className="hero-stats">

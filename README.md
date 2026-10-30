@@ -45,8 +45,14 @@ npm run dev      # http://localhost:5173
 
 | Route | What |
 | --- | --- |
-| `/` | Glowkit — the system, the teardown, the effect library, the playground |
+| `/` | **The full-view site.** Scroll-driven: entrance animations, a sticky self-drawing diagram, scroll-highlight text, count-ups, parallax. No player, no timeline. |
+| `/system.html` | The teardown — six primitives, the effect library, the playground, the Katana presets |
 | `/lore.html` | **Sky Above Teyvat** — a nine-beat Genshin lore cut built with the same scene engine |
+
+The landing page is a normal long-scroll website: every effect is triggered by scroll
+position or viewport entry (`site/src/scroll/`), which is the web-native use of the same
+six primitives. The 9:16 stage still exists on `/system.html` and `/lore.html` where the
+timeline version belongs.
 
 The lore sample is the "apply it to other content" proof: same primitives, same stage,
 recoloured to the seven element accents, with its own scene data in
