@@ -41,4 +41,17 @@ npm run dev      # http://localhost:5173
 5. **Katana** — the installed preset catalog, live status badge, and brief → preset matching.
 6. **Stack** — the build order, palette and record-to-MP4 recipe.
 
-Content lives in `site/src/scenes.ts`. Everything else is renderer.
+## Pages
+
+| Route | What |
+| --- | --- |
+| `/` | Glowkit — the system, the teardown, the effect library, the playground |
+| `/lore.html` | **Sky Above Teyvat** — a nine-beat Genshin lore cut built with the same scene engine |
+
+The lore sample is the "apply it to other content" proof: same primitives, same stage,
+recoloured to the seven element accents, with its own scene data in
+`site/src/lore/scenes.ts`. It is an unofficial fan sample — original copy, no game
+art, every visual CSS/SVG.
+
+Content lives in `site/src/scenes.ts` (and `site/src/lore/scenes.ts` for the sample).
+Everything else is renderer.

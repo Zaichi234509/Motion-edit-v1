@@ -638,7 +638,9 @@ export default function App() {
             <a href="#katana">Katana</a>
             <a href="#recipe">Stack</a>
           </nav>
-          <span className="pill">9:16 · CSS only</span>
+          <a className="pill" href="./lore.html" style={{ textDecoration: 'none' }}>
+            Lore sample ↗
+          </a>
         </div>
       </header>
 
@@ -663,6 +665,9 @@ export default function App() {
               </a>
               <a className="btn btn-ghost" href="#effects">
                 See the 9 effects
+              </a>
+              <a className="btn btn-ghost" href="./lore.html">
+                Genshin lore sample ↗
               </a>
             </div>
             <div className="hero-stats">

@@ -76,6 +76,14 @@ export default defineConfig(({ mode }) => {
 
   return {
   plugins: [react(), higgsfieldBridge()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        lore: 'lore.html',
+      },
+    },
+  },
   server: {
     host: '0.0.0.0',
     allowedHosts: true,

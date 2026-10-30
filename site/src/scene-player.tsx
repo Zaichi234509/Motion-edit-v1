@@ -9,6 +9,8 @@ export interface PlayerProps {
   showChrome?: boolean
   showKeyboard?: boolean
   showDock?: boolean
+  /** scene to open on — useful when jumping from a chapter list */
+  startIndex?: number
 }
 
 export function Player({
@@ -18,8 +20,9 @@ export function Player({
   showChrome = true,
   showKeyboard = true,
   showDock = true,
+  startIndex = 0,
 }: PlayerProps) {
-  const [i, setI] = useState(0)
+  const [i, setI] = useState(() => Math.max(0, Math.min(startIndex, scenes.length - 1)))
   const [run, setRun] = useState(0)
   const [playing, setPlaying] = useState(true)
   const [fill, setFill] = useState(0)

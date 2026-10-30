@@ -10,6 +10,20 @@
 
 export type Tone = 'violet' | 'lime' | 'coral'
 
+/** Every glow colour a word can take. Elements are for the lore sample. */
+export type AccentClass =
+  | 'accent-violet'
+  | 'accent-lime'
+  | 'accent-coral'
+  | 'hot'
+  | 'accent-anemo'
+  | 'accent-geo'
+  | 'accent-electro'
+  | 'accent-dendro'
+  | 'accent-hydro'
+  | 'accent-pyro'
+  | 'accent-cryo'
+
 export interface Node {
   id: string
   tag?: string
@@ -45,7 +59,7 @@ export interface Scene {
   kicker?: string
   head: string
   /** words inside `head` that get a colored glow */
-  accents?: Record<string, 'accent-violet' | 'accent-lime' | 'accent-coral' | 'hot'>
+  accents?: Record<string, AccentClass>
   sub?: string
   nodes?: Node[]
   edges?: Edge[]
