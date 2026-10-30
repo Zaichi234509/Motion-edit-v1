@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "higgsfield": {
+      "type": "http",
+      "url": "https://mcp.higgsfield.ai/mcp",
+      "_note": "Official hosted Higgsfield MCP. OAuth, no API key. Run /mcp in an MCP client to finish sign-in. 30+ image/video models."
+    },
+    "katana": {
+      "command": "node",
+      "args": ["site/server/mcp-bridge.mjs"],
+      "_note": "Local katana-mcp server: preset catalog + scene builder + guarded Higgsfield generation. Works with zero credentials."
+    }
+  }
+}

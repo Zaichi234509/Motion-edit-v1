@@ -1,0 +1,404 @@
+/* ============================================================
+   Lore sample — retints the Glowkit system to Teyvat.
+   Same primitives; the palette comes from the seven elements.
+   ============================================================ */
+
+.lore-root {
+  /* override the shared tokens inside this page only */
+  --violet: #d8b26a;
+  --violet-soft: #f0cf8e;
+  --violet-pale: #fbeccb;
+  --violet-deep: #8a5a1c;
+
+  --lime: #a5c83b;
+  --coral: #ef7938;
+
+  --bg: #05070d;
+  --bg-2: #070b14;
+  --ink: #f4f0e6;
+  --muted: #a49c8c;
+  --muted-2: #7a7264;
+
+  --line: rgba(216, 178, 106, 0.16);
+  --line-strong: rgba(216, 178, 106, 0.34);
+
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  isolation: isolate;
+}
+
+.lore-root .page-glow {
+  background:
+    radial-gradient(900px 520px at 16% -8%, rgba(20, 60, 82, 0.55), transparent 70%),
+    radial-gradient(820px 500px at 86% 2%, rgba(120, 84, 30, 0.34), transparent 68%),
+    radial-gradient(900px 700px at 50% 108%, rgba(24, 62, 70, 0.4), transparent 70%);
+}
+
+.lore-root .brand-mark {
+  background: conic-gradient(from 210deg, #f0cf8e, #8a5a1c, #74c2a8, #f0cf8e);
+  box-shadow: 0 0 18px rgba(240, 207, 142, 0.7);
+}
+
+.lore-root .hero h1 em {
+  background: linear-gradient(100deg, #fdf6e6 5%, #f0cf8e 35%, #d8b26a 62%, #74c2a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 26px rgba(240, 207, 142, 0.45));
+}
+
+.lore-root .btn-primary {
+  background: linear-gradient(180deg, #f3d79a, #c99a45);
+  color: #201503;
+  box-shadow: 0 0 0 1px rgba(255, 245, 220, 0.45) inset, 0 12px 40px -12px rgba(216, 178, 106, 0.9);
+}
+
+.lore-root .btn-primary:hover {
+  box-shadow: 0 0 0 1px rgba(255, 245, 220, 0.65) inset, 0 16px 54px -10px rgba(240, 207, 142, 1);
+}
+
+.lore-root .kicker {
+  color: #e8c98c;
+}
+
+.lore-root .kicker::before {
+  background: linear-gradient(90deg, transparent, #d8b26a);
+}
+
+/* the hook bar becomes a stretch of Celestia gold */
+.lore-root .hookbar {
+  background:
+    radial-gradient(120% 140% at 50% 120%, #fbe3a6 0%, #e8c274 40%, #c39a45 70%, #8f6a26 100%);
+}
+
+.lore-root .hookbar-text {
+  color: #241703;
+  text-shadow: 0 1px 10px rgba(255, 240, 200, 0.55);
+}
+
+/* the canvas gets a colder, higher sky */
+.lore-root .canvas {
+  background:
+    radial-gradient(115% 78% at 50% -10%, rgba(28, 82, 96, 0.7), transparent 62%),
+    radial-gradient(90% 60% at 82% 84%, rgba(216, 178, 106, 0.16), transparent 60%),
+    linear-gradient(180deg, #0a1a24 0%, #071019 46%, #05080f 100%);
+}
+
+.lore-root .canvas-grid {
+  background-image:
+    linear-gradient(to right, rgba(150, 220, 225, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(150, 220, 225, 0.1) 1px, transparent 1px);
+}
+
+.lore-root .glow-type::before {
+  color: #6fb9c9;
+}
+
+.lore-root .scene-sub {
+  color: #f2ecdd;
+  text-shadow: 0 0 14px rgba(216, 178, 106, 0.5);
+}
+
+.lore-root .node-card {
+  border-color: rgba(216, 178, 106, 0.45);
+  background: rgba(8, 14, 20, 0.88);
+  box-shadow: 0 0 28px -6px rgba(216, 178, 106, 0.5), inset 0 0 22px -10px rgba(240, 207, 142, 0.9);
+}
+
+.lore-root .node-card .n-tag {
+  color: rgba(240, 207, 142, 0.85);
+  background: #08121a;
+}
+
+.lore-root .player-fill {
+  background: linear-gradient(90deg, #8a5a1c, #f0cf8e);
+}
+
+/* ---------- the seven element accents ---------- */
+
+.lore-root .glow-type .accent-anemo {
+  color: #a9f0da;
+  text-shadow: 0 0 18px rgba(116, 194, 168, 0.95), 0 0 54px rgba(88, 180, 170, 0.6);
+}
+.lore-root .glow-type .accent-geo {
+  color: #ffd582;
+  text-shadow: 0 0 18px rgba(250, 183, 46, 0.95), 0 0 54px rgba(220, 150, 20, 0.6);
+}
+.lore-root .glow-type .accent-electro {
+  color: #ddc4f2;
+  text-shadow: 0 0 18px rgba(176, 143, 196, 1), 0 0 54px rgba(140, 100, 190, 0.65);
+}
+.lore-root .glow-type .accent-dendro {
+  color: #d3ec86;
+  text-shadow: 0 0 18px rgba(165, 200, 59, 0.95), 0 0 54px rgba(120, 170, 30, 0.6);
+}
+.lore-root .glow-type .accent-hydro {
+  color: #a5e6ff;
+  text-shadow: 0 0 18px rgba(76, 194, 241, 0.95), 0 0 54px rgba(30, 130, 210, 0.6);
+}
+.lore-root .glow-type .accent-pyro {
+  color: #ffb894;
+  text-shadow: 0 0 18px rgba(239, 121, 56, 0.95), 0 0 54px rgba(200, 70, 25, 0.65);
+}
+.lore-root .glow-type .accent-cryo {
+  color: #d6f6ff;
+  text-shadow: 0 0 18px rgba(159, 214, 227, 0.95), 0 0 54px rgba(90, 170, 200, 0.6);
+}
+.lore-root .glow-type .hot {
+  color: #ffe6a8;
+  text-shadow: 0 0 20px rgba(255, 230, 168, 0.9), 0 0 54px rgba(230, 180, 80, 0.6);
+}
+
+/* node tones, retinted per element family */
+.lore-root .node-card.lime {
+  border-color: rgba(165, 200, 59, 0.7);
+  box-shadow: 0 0 30px -8px rgba(165, 200, 59, 0.55), inset 0 0 22px -12px rgba(165, 200, 59, 0.9);
+}
+.lore-root .node-card.lime .n-title {
+  color: #d3ec86;
+  text-shadow: 0 0 14px rgba(165, 200, 59, 0.9);
+}
+.lore-root .node-card.violet {
+  border-color: rgba(240, 207, 142, 0.75);
+}
+.lore-root .node-card.violet .n-title {
+  color: #ffe9bd;
+  text-shadow: 0 0 12px rgba(240, 207, 142, 1);
+}
+.lore-root .node-card.coral {
+  border-color: rgba(239, 121, 56, 0.75);
+  box-shadow: 0 0 30px -8px rgba(239, 121, 56, 0.55), inset 0 0 22px -12px rgba(239, 121, 56, 0.9);
+}
+.lore-root .node-card.coral .n-title {
+  color: #ffb894;
+  text-shadow: 0 0 14px rgba(239, 121, 56, 0.95);
+}
+
+.lore-root .diagram text {
+  fill: rgba(240, 207, 142, 0.85);
+}
+
+/* ============================================================
+   Page-specific blocks
+   ============================================================ */
+
+.lore-badge-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  gap: 14px;
+}
+
+.chapter {
+  position: relative;
+  text-align: left;
+  padding: 18px 18px 17px;
+  border-radius: 15px;
+  border: 1px solid rgba(216, 178, 106, 0.16);
+  background: linear-gradient(180deg, rgba(12, 22, 30, 0.78), rgba(6, 10, 16, 0.6));
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.32s var(--ease-out), box-shadow 0.32s;
+}
+
+.chapter::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--el);
+  opacity: 0.85;
+  box-shadow: 0 0 16px var(--el);
+}
+
+.chapter:hover {
+  transform: translateY(-3px);
+  border-color: rgba(240, 207, 142, 0.42);
+  box-shadow: 0 26px 54px -34px var(--el);
+}
+
+.chapter[data-on='true'] {
+  border-color: var(--el);
+  box-shadow: 0 0 0 1px var(--el) inset, 0 22px 60px -34px var(--el);
+}
+
+.chapter-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.chapter-nation {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--el);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.chapter-nation i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--el);
+  box-shadow: 0 0 10px var(--el);
+  display: block;
+}
+
+.chapter-idx {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--muted-2);
+}
+
+.chapter h3 {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.chapter p {
+  font-size: 12.5px;
+  color: #948d7f;
+  line-height: 1.55;
+}
+
+/* the cosmology ladder */
+.ladder {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.rung {
+  display: grid;
+  grid-template-columns: 118px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 13px;
+  border: 1px solid rgba(216, 178, 106, 0.14);
+  background: linear-gradient(90deg, rgba(12, 22, 30, 0.8), rgba(6, 10, 16, 0.5));
+  position: relative;
+}
+
+.rung::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--el);
+  box-shadow: 0 0 18px var(--el);
+}
+
+.rung-tier {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--el);
+}
+
+.rung h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 3px;
+  color: #f6f0e2;
+}
+
+.rung p {
+  font-size: 12.5px;
+  color: #8f8879;
+  line-height: 1.5;
+}
+
+.rung-tag {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(216, 178, 106, 0.24);
+  color: #bdb3a0;
+  white-space: nowrap;
+}
+
+/* glossary */
+.terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.term {
+  border: 1px solid rgba(216, 178, 106, 0.14);
+  border-radius: 13px;
+  padding: 15px 16px;
+  background: linear-gradient(180deg, rgba(12, 20, 28, 0.66), rgba(6, 10, 16, 0.46));
+}
+
+.term b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #f0cf8e;
+  margin-bottom: 6px;
+}
+
+.term p {
+  font-size: 12.5px;
+  color: #8f8879;
+  line-height: 1.55;
+}
+
+/* disclaimer */
+.disclaimer {
+  border: 1px solid rgba(216, 178, 106, 0.18);
+  border-radius: 13px;
+  padding: 16px 18px;
+  background: rgba(240, 207, 142, 0.04);
+  font-size: 12.5px;
+  color: #968e7f;
+  line-height: 1.6;
+}
+
+.disclaimer b {
+  color: #e8c98c;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .rung {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .rung-tag {
+    justify-self: start;
+  }
+}
